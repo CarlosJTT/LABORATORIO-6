@@ -1,0 +1,41 @@
+/*UNIV. TARQUI TICONA CARLOS JAVIER
+LABORATORIO 6 - PROGRAMACION
+DIVISIBLE ENTRE 11*/
+
+
+#include<bits/stdc++.h>
+using namespace std;
+ 
+//Función para encontrar ese número divisible por 11 o no
+int check(string str)
+{
+    int n = str.length();
+ 
+    // Calcular la suma de dígitos pares e impares
+    // sumas
+    int oddDigSum = 0, evenDigSum = 0;
+    for (int i=0; i<n; i++)
+    {
+       // Cuando i es par, la posición del dígito es impar
+        if (i%2 == 0)
+            oddDigSum += (str[i]-'0');
+        else
+            evenDigSum += (str[i]-'0');
+    }
+   
+  // Comprobar si su diferencia es divisible por 11 o no   
+    return ((oddDigSum - evenDigSum) % 11 == 0);
+}
+ 
+// Código del controlador
+int main()
+{
+    system("color A");
+    cout << "             UNIV. TARQUI TICONA CARLOS JAVIER             "<<endl;
+    cout << "                   DIVISIBLE ENTRE 11                 "<<endl;
+    cout << "___________________________________________________________________"<<endl;
+    string str = "11";
+    check(str)?
+	cout << "SI ES DIVISIBLE" : cout << "NO ES DIVISIBLE";
+    return 0;
+}

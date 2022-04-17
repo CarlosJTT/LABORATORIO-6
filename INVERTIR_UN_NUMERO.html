@@ -1,0 +1,30 @@
+/*UNIV. TARQUI TICONA CARLOS JAVIER
+LABORATORIO 6 - PROGRAMACION
+Invertir un numero - recursividad*/
+
+#include<iostream>
+#include<cstdlib>
+using namespace std;
+
+void invertir(int nro){
+    cout<<nro%10;
+    if (nro>10) invertir(nro/10);
+
+}
+int main( void ){
+    system("color B");
+    int nro;
+        cout <<"                  UNIV. TARQUI TICONA CARLOS JAVIER             "<<endl;
+        cout <<"                        INVERTIR UN NUMERO                   "<<endl;
+        cout <<"___________________________________________________________________"<<endl;
+    do{
+            cout<<" INGRESE NUMERO: ";
+            cin>>nro;
+            if(nro<0) cout<<"\nINGRESE UN NUMERO ENTERO Y POSITIVO... \n";
+    }while(nro<0);
+    cout<<"\n NUMERO:"<<nro;
+    cout<<"\nINVERTIDO:";
+    invertir(nro);
+    cout<<endl<<endl;
+    return 0;
+}

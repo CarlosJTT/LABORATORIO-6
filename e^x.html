@@ -1,0 +1,46 @@
+/*UNIV. TARQUI TICONA CARLOS JAVIER
+LABORATORIO 6 - PROGRAMACION
+Calcular e^X como sucesión y aplicación recursiva*/
+
+#include <iostream>
+using namespace std;
+ 
+// Función recursiva con estática
+// variables p y f
+double e(int x, int n)
+{
+    static double p = 1, f = 1;
+    double r;
+ 
+    // condición de terminación
+    if (n == 0)
+        return 1;
+ 
+    // llamada recursiva
+    r = e(x, n - 1);
+ 
+    // Actualizar la potencia de x
+    p = p * x;
+ 
+    // Factorial
+    f = f * n;
+ 
+    return (r + p / f);
+}
+ 
+// Código del controlador
+int main()
+{
+    system("color B");
+    int x,n;
+    cout <<"                  UNIV. TARQUI TICONA CARLOS JAVIER             "<<endl;
+    cout <<"          CALCULAR e^X COMO SUCESIÓN Y APLICACIÓN RECURSIVA                "<<endl;
+    cout <<"___________________________________________________________________"<<endl;
+    cout<<" INGRESE EL VALOR DEL EXPONENTE: ";
+    cin>>x;
+    cout<<" INGRESE EL VALOR DE N-TERMINOS: ";
+    cin>>n;
+    cout<<"\n"<< e(x, n);
+ 
+    return 0;
+}

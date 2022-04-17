@@ -1,0 +1,33 @@
+/*UNIV. TARQUI TICONA CARLOS JAVIER
+LABORATORIO 6 - PROGRAMACION
+RECURSIVIDAD - FACTORIAL*/
+
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int recursividad(int);
+
+int main () {
+system("color 9"); 
+ int numero;
+ cout <<"                  UNIV. TARQUI TICONA CARLOS JAVIER             "<<endl;
+ cout <<"                      FACTORIAL DE UN NUMERO                     "<<endl;
+ cout <<"___________________________________________________________________"<<endl;
+ cout <<"DIGITE EL NUMERO: ";
+ cin >>numero;
+ cout <<"\nFACTORIAL DE "<<numero<<" ES: "<<recursividad(numero);
+ 
+ getch();
+ return 0;
+}
+int recursividad(int n) {
+ if (n==0) {
+  n = 1;
+ }
+ else {
+  n *= recursividad(n-1);
+ }
+ return n;
+}

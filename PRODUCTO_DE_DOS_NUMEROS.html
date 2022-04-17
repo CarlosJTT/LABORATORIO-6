@@ -1,0 +1,30 @@
+/*UNIV. TARQUI TICONA CARLOS JAVIER
+LABORATORIO 6 - PROGRAMACION
+calcular el producto de 2 numeros - recursividad*/
+
+#include<iostream>
+#include<cstdlib>
+using namespace std;
+
+int producto(int a,int b){
+    if(a==0||b==0) return 0;
+    if(a==1) return b;
+    if(b==1) return a;
+    else return a+producto(a,b-1);
+}
+int main( void ){
+    system("color 0a");
+    int a,b;
+        cout <<"                  UNIV. TARQUI TICONA CARLOS JAVIER             "<<endl;
+        cout <<"                  CALCULAR EL PRODUCTO DE 2 NUMEROS                   "<<endl;
+        cout <<"___________________________________________________________________"<<endl;
+        cout<<" INGRESE MULTIPLICANDO: ";
+        cin>>a;
+        cout<<" INGRESE MULTIPLICADOR: ";
+        cin>>b;
+
+        cout<<endl;
+        cout<<"EL PRODUCTO DE "<<a<<" Y "<<b<<" ES: "<<producto(a,b)<<endl<<endl;
+
+    return 0;
+}

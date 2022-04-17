@@ -1,0 +1,45 @@
+/*UNIV. TARQUI TICONA CARLOS JAVIER
+LABORATORIO 6 - PROGRAMACION
+MCD DE N NUMEROS*/
+
+
+#include <stdio.h>
+
+int main()
+{
+    system("color B");
+    int numero, residuo, mcd;
+    int i, n;
+    printf("                     UNIV. TARQUI TICONA CARLOS JAVIER\n       ");
+    printf("                CALCULO DE MCD DE N NUMEROS\n         ");
+    printf("___________________________________________________________________\n");
+    printf("INGRESE LA CANTIDAD DE NUMEROS:");
+    scanf("%d", &n);
+
+    for (i = 1; i <= n; i++)
+    {
+        printf("NUMERO: %d: ", i);
+        scanf("%d", &numero);
+
+        if (i == 1)
+        {
+            mcd = numero;
+        }
+        else
+        {
+            do
+            {
+                residuo = mcd % numero;
+                mcd = numero;
+                numero = residuo;
+            } while (residuo != 0);
+        }
+    }
+
+    printf("\nEL MCD ES: %d\n", mcd);
+
+    getchar();
+    getchar();
+
+    return 0;
+}

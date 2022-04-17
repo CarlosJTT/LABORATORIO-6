@@ -1,0 +1,43 @@
+/*UNIV. TARQUI TICONA CARLOS JAVIER
+LABORATORIO 6 - PROGRAMACION
+Permutacion*/
+
+#include<iostream>
+#include<cstdlib>
+#include<cmath>
+using namespace std;
+
+void permutacionCR(string aux, string *items, int n,int r){
+	string resp=aux;
+	if(r>0){
+		for(int x=0; x<n; x++){
+			permutacionCR(aux+items[x],items,n,r-1);
+		}
+	}else{
+		cout<<"\n "<<resp;
+	}
+}
+
+
+int main(){
+    system("color B");
+	string items[]={"A","B","C","D","E","F","G","H","I","J"};
+	int n,r;
+    cout <<"                  UNIV. TARQUI TICONA CARLOS JAVIER             "<<endl;
+    cout <<"                    PERMUTACION CON REPETICION                   "<<endl;
+    cout <<"___________________________________________________________________"<<endl;
+	cout<<"\n INGRESE N: ";
+	cin>>n;
+	cout<<"\n INGRESE R: ";
+	cin>>r;
+	cout<<"\n LISTA DE ELEMENTOS:\n ";
+	for(int x=0; x<n; x++){
+		cout<<items[x]<<",";
+	}
+	cout<<"    NUMERO DE PERMITACIONES CON REPETICION: "<<pow(n,r)<<endl;
+	cout<<"    LISTA DE PERMUTACIONES CON REPETICION:     "<<endl;
+	
+	permutacionCR("",items,n,r);
+	
+	return 0;
+}

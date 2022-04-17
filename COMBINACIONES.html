@@ -1,0 +1,32 @@
+/*UNIV. TARQUI TICONA CARLOS JAVIER
+LABORATORIO 6 - PROGRAMACION
+Combinacion sin repeticion*/
+
+#include <algorithm>
+#include <iostream>
+#include <string>
+
+void comb(int N, int K)
+{
+    std::string bitmask(K, 1); // K 
+    bitmask.resize(N, 0); // N-K 
+
+    // imprimir números enteros y permutar máscara de bits
+    do {
+        for (int i = 0; i < N; ++i) // [0..N-1] 
+        {
+            if (bitmask[i]) std::cout << " " << i;
+        }
+        std::cout << std::endl;
+    } while (std::prev_permutation(bitmask.begin(), bitmask.end()));
+}
+
+int main()
+{
+    comb(7, 4);
+}
+
+
+
+
+
